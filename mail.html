@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Email</title>
+</head>
+<body>
+  <form id="welcomeForm">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br><br>
+    <label for="email">Your Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS with your Service ID
+    emailjs.init('service_26whlqk'); // Replace with your EmailJS Service ID
+
+    document.getElementById('welcomeForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Get form values
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      
+      // Send welcome email using EmailJS template
+      var templateParams = {
+        from_name: 'Gyadu-EcoEngineering Ltd', // Sender's name (optional)
+        to_name: name,
+        user_email: email,
+        reply_to: 'noreply@example.com' // Reply-to email address (optional)
+      };
+
+      // Replace 'YOUR_EMAILJS_TEMPLATE_ID' with your EmailJS template ID
+      emailjs.send('service_26whlqk', 'template_knbbbhm', templateParams)
+        .then(function(response) {
+          console.log('Email sent successfully!', response);
+          alert('Welcome email sent successfully!');
+        }, function(error) {
+          console.error('Email sending failed:', error);
+          alert('Failed to send welcome email. Please try again later.');
+        });
+
+      // Reset form after submission
+      document.getElementById('welcomeForm').reset();
+    });
+  </script>
+</body>
+</html>

@@ -182,7 +182,7 @@ p
 /* start divider */
 #divider
     {
-        background: url('../images/divider-bg.jpg');
+        background: url('../images/bg.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         color: #FFFFFF;
