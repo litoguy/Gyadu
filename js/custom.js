@@ -120,3 +120,8 @@ jQuery(document).ready(function($){
             event.preventDefault();
         });
     });
+
+    var currentYear = new Date().getFullYear();
+
+    // Display current year in the HTML element
+    document.getElementById('currentYear').textContent = currentYear;
