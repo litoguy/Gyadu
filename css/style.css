@@ -182,7 +182,7 @@ p
 /* start divider */
 #divider
     {
-        background: url('../images/bg.jpg');
+        background: url('../images/text-bg.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         color: #FFFFFF;
@@ -501,7 +501,7 @@ p
 /* start contact */
 #contact
     {
-        background: url('../images/contact-bg.jpg');
+        background: url('../images/con-bg.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         color: #ffffff;
